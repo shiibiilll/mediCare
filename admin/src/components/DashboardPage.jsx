@@ -375,6 +375,27 @@ const DashboardPage = () => {
             </tbody>
           </table>
         </div>
+
+        <div className={ds.mobileDoctorContainer}>
+          <div className={ds.mobileDoctorGrid}>
+            {visibleDoctors.map((d) => (
+              <MobileDoctorCard key={d.id} d={d} />
+            ))}
+          </div>
+        </div>
+
+        {filteredDoctors.length > INITIAL_COUNT && (
+          <div className={ds.showMoreContainer}>
+            <button
+              onClick={() => setShowAll((s) => !s)}
+              className={ds.showMoreButton + " " + ds.cursorPointer}
+            >
+              {showAll
+                ? "Show less"
+                : `Show more (${filteredDoctors.length - INITIAL_COUNT})`}
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -391,6 +412,50 @@ function StatCard({ icon, label, value }) {
           <div className={ds.statLabel}>{label}</div>
           <div className={ds.statValue}>{value}</div>
         </div>
+      </div>
+    </div>
+  );
+}
+
+function MobileDoctorCard({ d }) {
+  return (
+    <div className={ds.mobileDoctorCard}>
+      <div className={ds.mobileDoctorHeader}>
+        <div className="flex items-center gap-3">
+          <img src={d.image} alt={d.name} className={ds.mobileDoctorImage} />
+          <div>
+            <div className={ds.mobileDoctorName}>{d.name}</div>
+            <div className={ds.mobileDoctorSpecialization}>
+              {d.specialization}
+            </div>
+          </div>
+        </div>
+        <div className={ds.mobileDoctorFee}>₹ {d.fee}</div>
+      </div>
+      <div className={ds.mobileStatsGrid}>
+        <div>
+          <div className={ds.mobileStatLabel}>Appts</div>
+          <div className={ds.mobileStatValue}>{d.appointments.total}</div>
+        </div>
+
+        <div>
+          <div className={ds.mobileStatLabel}>Done</div>
+          <div className={ds.mobileStatValue + " " + ds.textEmerald600}>
+            {d.appointments.completed}
+          </div>
+        </div>
+
+        <div>
+          <div className={ds.mobileStatLabel}>Cancel</div>
+          <div className={ds.mobileStatValue + " " + ds.textRose500}>
+            {d.appointments.canceled}
+          </div>
+        </div>
+      </div>
+
+      <div className={ds.mobileEarningsContainer}>
+        <div>Earned</div>
+        <div className="font-semibold">₹ {d.earnings.toLocaleString()}</div>
       </div>
     </div>
   );
