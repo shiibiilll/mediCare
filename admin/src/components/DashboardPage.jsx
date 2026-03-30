@@ -144,6 +144,9 @@ const DashboardPage = () => {
       setPatientCountLoading(true);
       try {
         const res = await fetch(PATIENT_COUNT_API);
+
+        const data = await res.json();
+
         if (!res.ok) {
           console.warn("Patient count fetch failed:", res.status);
           if (mounted) setPatientCount(0);
@@ -155,6 +158,8 @@ const DashboardPage = () => {
           body?.count ?? body?.totalUsers ?? body?.data ?? 0,
         );
         if (mounted) setPatientCount(isNaN(count) ? 0 : count);
+
+        setPatientCount(data.totalUser);
       } catch (err) {
         console.error("Failed to fetch patient count:", err);
         if (mounted) setPatientCount(0);

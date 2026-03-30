@@ -3,6 +3,7 @@ import { Route, Routes, Link } from "react-router-dom";
 import { useUser } from "@clerk/react";
 import Hero from "./pages/Hero.jsx";
 import Home from "./pages/Home.jsx";
+import Add from "./pages/Add.jsx";
 
 const App = () => {
   function RequireAuth({ children }) {
@@ -48,6 +49,15 @@ const App = () => {
           </RequireAuth>
         }
       />
+
+      <Route
+        path="/add"
+        element={
+          <RequireAuth>
+            <Add />
+          </RequireAuth>
+        }
+      ></Route>
     </Routes>
   );
 };

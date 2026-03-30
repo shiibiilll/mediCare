@@ -43,8 +43,8 @@ connectDB();
 //Route
 app.use("/api/doctors", doctorRouter);
 app.use("/api/services", serviceRouter);
-app.use("api/appointments", appointmentRouter);
-app.use('api/service-appointments', serviceAppointmentRouter);
+app.use("/api/appointments", appointmentRouter);
+app.use('/api/service-appointments', serviceAppointmentRouter);
 
 app.get("/", (req, res) => {
   res.send("API Working");
