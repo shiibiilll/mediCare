@@ -29,7 +29,7 @@ export const doctorDetailStyles = {
 
   // File upload styles
   fileInput:
-    "w-40 md:w-[180px] border-2 border-emerald-100 rounded-full p-2 text-sm bg-white focus:border-emerald-400 transition",
+    "w-40 md:w-[180px] border-2 border-emerald-100 rounded-full p-2 text-sm bg-white focus:border-emerald-400 transition cursor-pointer",
   imagePreview:
     "h-12 w-12 md:h-16 md:w-16 rounded-full shadow-md border-2 border-emerald-200 object-cover",
   removeImageButton:
