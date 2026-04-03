@@ -56,7 +56,7 @@ const AddPage = () => {
     imageFile: null,
     imagePreview: "",
     experience: "",
-    qualifications: "",
+    qualification: "",
     location: "",
     about: "",
     fee: "",
@@ -106,7 +106,9 @@ const AddPage = () => {
     if (form.imagePreview && form.imageFile) {
       try {
         URL.revokeObjectURL(form.imagePreview);
-      } catch (err) {}
+      } catch (err) {
+        console.error('Handle Image Error:', err)
+      }
     }
     setForm((p) => ({
       ...p,
@@ -120,13 +122,17 @@ const AddPage = () => {
     if (form.imagePreview && form.imageFile) {
       try {
         URL.revokeObjectURL(form.imagePreview);
-      } catch (err) {}
+      } catch (err) {
+        console.error('Remove Image Error:', err)
+      }
     }
     setForm((p) => ({ ...p, imageFile: null, imagePreview: "" }));
     if (fileInputRef.current) {
       try {
         fileInputRef.current.value = "";
-      } catch (err) {}
+      } catch (err) {
+        console.error('Remove Image Error:', err)
+      }
     }
   }
 
@@ -195,7 +201,7 @@ const AddPage = () => {
       "name",
       "specialization",
       "experience",
-      "qualifications",
+      "qualification",
       "location",
       "about",
       "fee",
@@ -231,7 +237,7 @@ const AddPage = () => {
       fd.append("name", form.name);
       fd.append("specialization", form.specialization || "");
       fd.append("experience", form.experience || "");
-      fd.append("qualifications", form.qualifications || "");
+      fd.append("qualification", form.qualification || "");
       fd.append("location", form.location || "");
       fd.append("about", form.about || "");
       fd.append("fee", form.fee === "" ? "0" : String(form.fee));
@@ -266,7 +272,9 @@ const AddPage = () => {
       if (data?.token) {
         try {
           localStorage.setItem("token", data.token);
-        } catch (err) {}
+        } catch (err) {
+          console.error('Handle Add Error: ', err)
+        }
       }
 
       const doctorFromServer = data?.data
@@ -279,7 +287,9 @@ const AddPage = () => {
       if (form.imagePreview && form.imageFile) {
         try {
           URL.revokeObjectURL(form.imagePreview);
-        } catch (err) {}
+        } catch (err) {
+          console.error('Handle Add Error: ', err)
+        }
       }
 
       // Reset The Field After Submit Is Done
@@ -289,7 +299,7 @@ const AddPage = () => {
         imageFile: null,
         imagePreview: "",
         experience: "",
-        qualifications: "",
+        qualification: "",
         location: "",
         about: "",
         fee: "",
@@ -305,7 +315,9 @@ const AddPage = () => {
       if (fileInputRef.current) {
         try {
           fileInputRef.current.value = "";
-        } catch (err) {}
+        } catch (err) {
+          console.error('Handle Add Error: ', err)
+        }
       }
 
       setSlotDate("");
@@ -397,9 +409,9 @@ const AddPage = () => {
           <input
             placeholder="Qualifications"
             className={dds.inputBase}
-            value={form.qualifications}
+            value={form.qualification}
             onChange={(e) =>
-              setForm({ ...form, qualifications: e.target.value })
+              setForm({ ...form, qualification: e.target.value })
             }
           />
 
