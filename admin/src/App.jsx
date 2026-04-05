@@ -5,6 +5,7 @@ import Hero from "./pages/Hero.jsx";
 import Home from "./pages/Home.jsx";
 import Add from "./pages/Add.jsx";
 import List from "./pages/List.jsx";
+import Appointments from "./pages/Appointments.jsx";
 
 const App = () => {
   function RequireAuth({ children }) {
@@ -68,6 +69,14 @@ const App = () => {
           </RequireAuth>
         }
       />
+
+      <Route
+      path="/appointments"
+      element={
+        <RequireAuth>
+          <Appointments />
+        </RequireAuth>
+      } />
     </Routes>
   );
 };
