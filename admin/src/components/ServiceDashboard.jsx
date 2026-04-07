@@ -1,4 +1,12 @@
 import React, { useState, useRef, useMemo, useEffect } from "react";
+import {
+  BadgeIndianRupee,
+  Calendar,
+  CheckCircle,
+  ClipboardList,
+  Search,
+  XCircle,
+} from "lucide-react";
 import { serviceDashboardStyles as sds } from "../assets/dummyStyles.js";
 
 // Normalize Backend Data Coming From DB
@@ -280,9 +288,52 @@ const ServiceDashboard = ({ services: servicesProp = null }) => {
             </button>
           </div>
         </div>
+
+        <div className={sds.statGrid}>
+          <StatCard
+            icon={<ClipboardList size={18} />}
+            label="Total Services"
+            value={totals.totalServices}
+          />
+
+          <StatCard
+            icon={<Calendar size={18} />}
+            label="Total Appointments"
+            value={totals.totalAppointments}
+          />
+
+          <StatCard
+            icon={<BadgeIndianRupee size={18} />}
+            label="Total Earnings"
+            value={formatCurrency(totals.totalEarning)}
+          />
+
+          <StatCard
+            icon={<CheckCircle size={18} />}
+            label="Completed"
+            value={totals.totalCompleted}
+          />
+
+          <StatCard
+            icon={<XCircle size={18} />}
+            label="Cancelled"
+            value={totals.totalCanceled}
+          />
+        </div>
       </div>
     </div>
   );
 };
 
 export default ServiceDashboard;
+
+function StatCard({ icon, label, value }) {
+  return (
+    <div className={sds.statCard.container}>
+      <div className={sds.statCard.iconContainer}>{icon}</div>
+
+      <div className={sds.statCard.label}>{label}</div>
+      <div className={sds.statCard.value}>{value}</div>
+    </div>
+  );
+}
