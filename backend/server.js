@@ -12,27 +12,25 @@ import serviceAppointmentRouter from "./routes/serviceAppointmentRouter.js";
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const allowedOrgins = [
-  'http://localhost:3001/',
-  'http://localhost:3002/',
-]
+const allowedOrigins = [
+  'http://localhost:3001',
+  'http://localhost:3002',
+  'http://localhost:5173',
+];
 
 // Middleware
-app.use(cors(
-  {
-    orgin: function(orgin, callback) {
-      if(!orgin) return callback(null, true);
-      if(allowedOrgins.includes(orgin)) {
-        return callback(null, true)
-      }
-
-      return callback(new Error('Not allowed by CORS'))
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.includes(origin)) return callback(null, true);
+      return callback(new Error("Not allowed by CORS"));
     },
     credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ["Content-Type", "Authorization"]
-  }
-));
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  }),
+);
 app.use(clerkMiddleware());
 app.use(express.json({ limit: "20mb" }));
 app.use(express.urlencoded({ limit: "20mb", extended: true }));

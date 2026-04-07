@@ -6,6 +6,7 @@ import Home from "./pages/Home.jsx";
 import Add from "./pages/Add.jsx";
 import List from "./pages/List.jsx";
 import Appointments from "./pages/Appointments.jsx";
+import SerDashboard from "./pages/SerDashboard.jsx";
 
 const App = () => {
   function RequireAuth({ children }) {
@@ -71,12 +72,22 @@ const App = () => {
       />
 
       <Route
-      path="/appointments"
-      element={
-        <RequireAuth>
-          <Appointments />
-        </RequireAuth>
-      } />
+        path="/appointments"
+        element={
+          <RequireAuth>
+            <Appointments />
+          </RequireAuth>
+        }
+      />
+
+      <Route
+        path="/service-dashboard"
+        element={
+          <RequireAuth>
+            <SerDashboard />
+          </RequireAuth>
+        }
+      />
     </Routes>
   );
 };
