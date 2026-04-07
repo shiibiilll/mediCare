@@ -341,7 +341,183 @@ const ServiceDashboard = ({ services: servicesProp = null }) => {
             )}
           </div>
         </div>
+
+        {/* TABLE LIST TABLET VIEW*/}
+        <div className={sds.table.container}>
+          <div className={sds.table.headerMd}>
+            <div className={sds.table.headerText}>Service</div>
+            <div className={sds.table.headerText}>Appointments</div>
+            <div className={sds.table.headerText}>Completed</div>
+            <div className={sds.table.headerText}>Canceled</div>
+            <div className={sds.table.headerText}>Earning</div>
+          </div>
+        </div>
+
+        {/* TABLE LIST DESKTOP VIEW*/}
+        <div className={sds.table.headerLg}>
+          <div className="col-span-5">Service</div>
+          <div className="col-span-2">Price</div>
+          <div className={sds.table.headerTextLg(1)}>Appointments</div>
+          <div className={sds.table.headerTextLg(1)}>Completed</div>
+          <div className={sds.table.headerTextLg(1)}>Canceled</div>
+          <div className="col-span-2 text-right">Earning</div>
+        </div>
+
+        <div className={sds.table.body}>
+          {loading ? (
+            <div className={sds.states.loading}>Loading Services...</div>
+          ) : error ? (
+            <div className={sds.states.error}>Error: {error}</div>
+          ) : visibleServices.length === 0 ? (
+            <div className={sds.states.empty}>No Services Found.</div>
+          ) : (
+            visibleServices.map((s) => {
+              const earning = s.completed * s.price;
+
+              return (
+                <div className={sds.table.row} key={s.id}>
+                  {/* TABLET VIEW */}
+                  <div className={sds.table.tabletView}>
+                    <div className="flex items-center gap-3">
+                      <div className={sds.table.tabletImage}>
+                        <img
+                          src={s.image}
+                          alt={s.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className={sds.table.tabletTextContainer}>
+                        <div className={sds.table.tabletServiceName}>
+                          {s.name}
+                        </div>
+                        <div className={sds.table.tabletPrice}>
+                          {formatCurrency(s.price)}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className={sds.table.tabletCell}>
+                      {s.totalAppointments}
+                    </div>
+                    <div className={`${sds.table.tabletCell} text-emerald-700`}>
+                      {s.completed}
+                    </div>
+                    <div className={`${sds.table.tabletCell} text-red-500`}>
+                      {s.canceled}
+                    </div>
+                    <div className={`${sds.table.tabletCell} text-right`}>
+                      {formatCurrency(earning)}
+                    </div>
+                  </div>
+
+                  {/* FOR DESKTOP */}
+                  <div className={sds.table.desktopView}>
+                    <div className="col-span-5 flex items-center gap-4">
+                      <div className={sds.table.desktopImage}>
+                        <img
+                          src={s.image}
+                          alt={s.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+
+                      <h3 className={sds.table.desktopServiceName}>{s.name}</h3>
+                    </div>
+
+                    <div className={sds.table.desktopCell(2)}>
+                      {formatCurrency(s.price)}
+                    </div>
+
+                    <div className={sds.table.desktopCenterCell(1)}>
+                      {s.totalAppointments}
+                    </div>
+
+                    <div className={sds.table.desktopCenterCell(1)}>
+                      {s.completed}
+                    </div>
+
+                    <div className={sds.table.desktopCenterCell(1)}>
+                      {s.canceled}
+                    </div>
+
+                    <div className={`${sds.table.desktopCell(2)} text-right`}>
+                      {formatCurrency(earning)}
+                    </div>
+                  </div>
+
+                  {/* FOR MOBILE VIEW */}
+                  <div className={sds.table.mobileView}>
+                    <div className="flex items-start gap-3">
+                      <div className={sds.table.mobileImage}>
+                        <img
+                          src={s.image}
+                          alt={s.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+
+                      <div className="flex-1 min-w-0">
+                        <div className={sds.table.mobileServiceHeader}>
+                          <h3 className={sds.table.mobileServiceName}>
+                            {s.name}
+                          </h3>
+                          <div className="text-sm font-medium">
+                            {formatCurrency(s.price)}
+                          </div>
+                        </div>
+
+                        <div className={sds.table.mobileStatsContainer}>
+                          <div className={sds.table.mobileStatItem("emerald")}>
+                            <Calendar size={14} />
+                            <span className="leading-none">
+                              {s.totalAppointments} Appointments
+                            </span>
+                          </div>
+
+                          <div className={sds.table.mobileStatItem("emerald")}>
+                            <CheckCircle size={14} />
+                            <span className="leading-none text-emerald-700">
+                              {s.completed} Completed
+                            </span>
+                          </div>
+
+                          <div className={sds.table.mobileStatItem("red")}>
+                            <XCircle size={14} />
+                            <span className="leading-none text-red-500">
+                              {s.canceled} Canceled
+                            </span>
+                          </div>
+
+                          <div className={sds.table.mobileStatItem("emerald")}>
+                            <BadgeIndianRupee size={14} />
+                            <span className="leading-none">
+                              Total Earning : {formatCurrency(earning)}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })
+          )}
+        </div>
       </div>
+
+      {/* SHOW MORE / SHOW LESS */}
+      {filteredServices.length > INITIAL_COUNT && (
+        <div className={sds.showMore.container}>
+          <button
+            onClick={() => setShowAll((s) => !s)}
+            className={sds.showMore.button}
+          >
+            {showAll
+              ? "Show Less"
+              : `Show More (${filteredServices.length - INITIAL_COUNT})`}
+          </button>
+        </div>
+      )}
     </div>
   );
 };
