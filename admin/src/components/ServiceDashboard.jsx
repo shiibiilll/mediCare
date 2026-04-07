@@ -320,6 +320,27 @@ const ServiceDashboard = ({ services: servicesProp = null }) => {
             value={totals.totalCanceled}
           />
         </div>
+
+        <div className={sds.search.container}>
+          <div className={sds.search.inputContainer}>
+            <Search size={16} className="text-emerald-700" />
+            <input
+              type="text"
+              placeholder="Search services..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className={sds.search.input}
+            />
+
+            {searchQuery.length > 0 && (
+              <XCircle
+                size={16}
+                className="text-red-500 cursor-pointer"
+                onClick={() => setSearchQuery("")}
+              />
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );
