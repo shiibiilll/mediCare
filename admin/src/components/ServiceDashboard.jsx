@@ -136,7 +136,9 @@ const ServiceDashboard = ({ services: servicesProp = null }) => {
     return () => {
       try {
         delete window.refreshServices;
-      } catch {}
+      } catch (err) {
+        console.error("Refresh Service Error:", err);
+      }
     };
   }, []);
 
