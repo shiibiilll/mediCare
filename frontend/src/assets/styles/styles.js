@@ -78,15 +78,16 @@ export const iconSize = {
 
 export const bannerStyles = {
   // Banner container styles
-  bannerContainer: "relative w-full max-w-7xl mx-auto my-12 px-4",
+  // add extra top margin to clear sticky navbar and avoid overlap
+  bannerContainer: "relative w-full max-w-7xl mx-auto mt-24 mb-12 px-4",
   
   // Main container with animated border
   mainContainer: "relative rounded-3xl shadow-2xl overflow-hidden group",
   
   // Border outline styles
-  borderOutline: "absolute inset-0 rounded-3xl p-[3px] pointer-events-none",
-  outerAnimatedBand: "absolute inset-0 rounded-3xl bg-linear-to-r from-green-400 via-emerald-500 to-green-400 animate-[spin_3s_linear_infinite] opacity-80",
-  innerWhiteBorder: "absolute inset-0.5 rounded-3xl bg-white",
+  borderOutline: "absolute inset-0 rounded-3xl p-[3px] pointer-events-none z-0",
+  outerAnimatedBand: "absolute inset-0 rounded-3xl bg-linear-to-r from-green-400 via-emerald-500 to-green-400 animate-[spin_4s_linear_infinite] opacity-80 z-0",
+  innerWhiteBorder: "absolute inset-0.5 rounded-3xl bg-white z-10",
   
   // Content container
   contentContainer: "relative z-20 p-6 sm:p-8 md:p-10 lg:p-12",
@@ -132,13 +133,13 @@ export const bannerStyles = {
   ctaButtonsContainer: "flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start",
   
   // Book appointment button
-  bookButton: "group relative lg:whitespace-nowrap bg-linear-to-r from-green-500 to-emerald-300 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold transform transition-all duration-300 shadow-2xl hover:shadow-3xl overflow-hidden text-sm sm:text-base",
+  bookButton: "group relative lg:whitespace-nowrap bg-linear-to-r from-green-500 to-emerald-300 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold transform transition-all duration-300 shadow-2xl hover:shadow-3xl overflow-hidden text-sm sm:text-base cursor-pointer",
   bookButtonOverlay: "absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000",
   bookButtonContent: "relative flex items-center justify-center gap-2",
   bookButtonIcon: "w-4 h-4 sm:w-5 sm:h-5",
   
   // Emergency call button
-  emergencyButton: "group border-2 lg:whitespace-nowrap border-red-400 text-red-600 bg-red-300 px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold transform transition-all duration-300 backdrop-blur-sm hover:shadow-lg hover:bg-red-400/80 text-sm sm:text-base",
+  emergencyButton: "group border-2 lg:whitespace-nowrap border-red-400 text-red-600 bg-red-300 px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold transform transition-all duration-300 backdrop-blur-sm hover:shadow-lg hover:bg-red-400/80 text-sm sm:text-base cursor-pointer",
   emergencyButtonContent: "flex items-center justify-center gap-2",
   emergencyButtonIcon: "w-4 h-4 sm:w-5 sm:h-5",
   
