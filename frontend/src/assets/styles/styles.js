@@ -212,7 +212,7 @@ export const certificationStyles = {
       }
     }
     .animate-marquee-single {
-      animation: marquee-single 60s linear infinite;
+      animation: marquee-single 30s linear infinite;
     }
   `
 };

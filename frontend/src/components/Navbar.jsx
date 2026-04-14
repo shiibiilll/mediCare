@@ -69,7 +69,7 @@ const Navbar = () => {
     { label: "Home", href: "/" },
     { label: "Doctors", href: "/doctors" },
     { label: "Services", href: "/services" },
-    { label: "Appoinments", href: "/appointments" },
+    { label: "Appointments", href: "/appointments" },
     { label: "Contact", href: "/contact" },
   ];
 
