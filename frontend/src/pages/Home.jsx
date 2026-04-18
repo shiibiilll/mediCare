@@ -4,6 +4,7 @@ import Banner from "../components/Banner.jsx";
 import Certification from '../components/Certification.jsx';
 import HomeDoctors from "../components/HomeDoctors.jsx";
 import Testimonial from "../components/testimonial.jsx";
+import Footer from "../components/Footer.jsx";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <Certification />
       <HomeDoctors />
       <Testimonial />
+      <Footer />
     </div>
   );
 };
