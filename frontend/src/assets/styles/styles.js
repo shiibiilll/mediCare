@@ -288,7 +288,7 @@ export const contactPageStyles = {
 
 export const doctorsPageStyles = {
   // Main container
-  mainContainer: "min-h-screen bg-linear-to-br from-emerald-50 to-teal-100 py-8 sm:py-10 px-3 sm:px-6 relative overflow-hidden",
+  mainContainer: "min-h-screen bg-linear-to-br from-emerald-50 to-teal-100 pt-24 sm:pt-28 md:pt-26 pb-8 sm:pb-10 px-3 sm:px-6 relative overflow-hidden",
   
   // Background shapes
   backgroundShape1: "absolute -top-40 -right-32 w-72 h-72 sm:w-96 sm:h-96 bg-emerald-200 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-pulse",
@@ -306,7 +306,7 @@ export const doctorsPageStyles = {
   searchContainer: "flex justify-center mb-8 sm:mb-12 animate-slide-up",
   searchWrapper: "relative w-full max-w-xl transition-all duration-500 px-2 sm:px-0",
   searchInput: "w-full py-3 sm:py-4 pl-12 pr-10 text-sm sm:text-lg rounded-full border border-emerald-300 bg-white/90 text-emerald-800 placeholder-emerald-400 shadow-md sm:shadow-lg focus:outline-none focus:ring-2 focus:ring-emerald-400/40 focus:shadow-xl transition-all duration-300 hover:shadow-2xl",
-  searchIcon: "absolute left-4 top-3 sm:top-4 text-emerald-600 w-5 h-5 sm:w-6 sm:h-6",
+  searchIcon: "absolute left-4 top-3 sm:top-4 text-emerald-600 w-4 h-4 sm:w-6 sm:h-6",
   clearButton: "absolute right-3 top-3 sm:top-4 text-emerald-600 hover:text-emerald-800 transition",
   
   // Error area
