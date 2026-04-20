@@ -761,7 +761,7 @@ export const navbarStyles = {
 
 export const servicePageStyles = {
   // Page container
-  pageContainer: "min-h-screen py-12 px-6 lg:px-20 font-serif bg-linear-to-b from-emerald-50 to-white",
+  pageContainer: "min-h-screen pt-28 pb-12 px-6 lg:px-20 font-serif bg-linear-to-b from-emerald-50 to-white",
   maxWidthContainer: "max-w-6xl mx-auto",
   
   // Header
