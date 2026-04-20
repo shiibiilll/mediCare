@@ -270,7 +270,7 @@ const DoctorsPage = () => {
 
                   {doctor.available ? (
                     <Link
-                      to={`doctors/${doctor.id}`}
+                      to={`/doctors/${doctor.id}`}
                       state={{ doctor: doctor.raw || doctor }}
                       className={dps.bookButton}
                     >
