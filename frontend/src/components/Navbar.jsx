@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { navbarStyles } from "../assets/styles/styles.js";
 import { useLocation, useNavigate, Link } from "react-router-dom";
-import { useClerk, UserButton, Show } from "@clerk/react";
+import { useClerk, UserButton, SignedIn, SignedOut } from "@clerk/clerk-react";
 import { User, Key, X, Menu } from "lucide-react";
 import logo from "../assets/public/logo.png";
 
@@ -124,30 +124,32 @@ const Navbar = () => {
               </div>
               {/* Right side */}
               <div className={navbarStyles.rightContainer}>
-                <Show when="signed-out">
-                  <Link
-                    to="doctor-admin/login"
-                    className={navbarStyles.doctorAdminButton}
-                  >
-                    <User className={navbarStyles.doctorAdminIcon} />
-                    <span className={navbarStyles.doctorAdminText}>
-                      Doctor Admin
-                    </span>
-                  </Link>
+                <div className={navbarStyles.rightContainer}>
+                  <SignedOut>
+                    <Link
+                      to="doctor-admin/login"
+                      className={navbarStyles.doctorAdminButton}
+                    >
+                      <User className={navbarStyles.doctorAdminIcon} />
+                      <span className={navbarStyles.doctorAdminText}>
+                        Doctor Admin
+                      </span>
+                    </Link>
 
-                  {/* Patient Login */}
-                  <button
-                    onClick={() => clerk.openSignIn()}
-                    className={navbarStyles.loginButton}
-                  >
-                    <Key className={navbarStyles.loginIcon} />
-                    Login
-                  </button>
-                </Show>
+                    {/* Patient Login */}
+                    <button
+                      onClick={() => clerk.openSignIn()}
+                      className={navbarStyles.loginButton}
+                    >
+                      <Key className={navbarStyles.loginIcon} />
+                      Login
+                    </button>
+                  </SignedOut>
 
-                <Show when="signed-in">
-                  <UserButton afterSignOutUrl="/" />
-                </Show>
+                  <SignedIn>
+                    <UserButton afterSignOutUrl="/" />
+                  </SignedIn>
+                </div>
 
                 {/* To Toggle */}
 
@@ -184,7 +186,7 @@ const Navbar = () => {
                   );
                 })}
 
-                <Show when="signed-out">
+                <SignedOut>
                   <Link
                     to="/doctor-admin/login"
                     className={navbarStyles.mobileDoctorAdminButton}
@@ -204,7 +206,7 @@ const Navbar = () => {
                       Login
                     </button>
                   </div>
-                </Show>
+                </SignedOut>
               </div>
             )}
           </div>
