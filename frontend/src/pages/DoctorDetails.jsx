@@ -474,7 +474,7 @@ const DoctorDetails = () => {
                       Qualifications
                     </div>
                     <div className={doctorDetailStyles.infoValue}>
-                      {doctor.qualifications}
+                      {doctor.qualification}
                     </div>
                   </div>
                 </div>
