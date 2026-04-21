@@ -4,6 +4,7 @@ import Home from "./pages/Home.jsx";
 import Doctors from "./pages/Doctors.jsx";
 import DoctorDetails from "./pages/DoctorDetails.jsx";
 import Service from "./pages/Service.jsx";
+import ServiceDetails from "./pages/ServiceDetails.jsx";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/doctors/:id" element={<DoctorDetails />} />
 
         <Route path="/services" element={<Service />} />
+        <Route path="/services/:id" element={<ServiceDetails />} />
       </Routes>
     </div>
   );
