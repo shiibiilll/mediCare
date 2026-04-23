@@ -5,6 +5,7 @@ import Doctors from "./pages/Doctors.jsx";
 import DoctorDetails from "./pages/DoctorDetails.jsx";
 import Service from "./pages/Service.jsx";
 import ServiceDetails from "./pages/ServiceDetails.jsx";
+import Contact from "./pages/Contact.jsx";
 
 const App = () => {
   return (
@@ -17,6 +18,8 @@ const App = () => {
 
         <Route path="/services" element={<Service />} />
         <Route path="/services/:id" element={<ServiceDetails />} />
+
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </div>
   );

@@ -221,7 +221,7 @@ export const certificationStyles = {
 
 export const contactPageStyles = {
   // Page container
-  pageContainer: "min-h-screen bg-linear-to-br from-emerald-100 via-white to-emerald-50 py-12 px-4 sm:px-6 md:px-8 lg:px-20 font-serif relative overflow-hidden",
+  pageContainer: "min-h-screen bg-linear-to-br from-emerald-100 via-white to-emerald-50 pt-20 sm:pt-24 md:pt-28 pb-8 sm:pb-10 px-4 sm:px-6 md:px-8 lg:px-20 font-serif relative overflow-hidden",
   
   // Background accents
   bgAccent1: "hidden md:block absolute top-20 left-10 w-72 h-72 bg-emerald-300 rounded-full blur-3xl opacity-18 animate-pulse",
