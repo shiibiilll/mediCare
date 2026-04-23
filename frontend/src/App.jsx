@@ -6,13 +6,14 @@ import DoctorDetails from "./pages/DoctorDetails.jsx";
 import Service from "./pages/Service.jsx";
 import ServiceDetails from "./pages/ServiceDetails.jsx";
 import Contact from "./pages/Contact.jsx";
+import Login from "./pages/Login.jsx";
 
 const App = () => {
   return (
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
-        
+
         <Route path="/doctors" element={<Doctors />} />
         <Route path="/doctors/:id" element={<DoctorDetails />} />
 
@@ -20,6 +21,8 @@ const App = () => {
         <Route path="/services/:id" element={<ServiceDetails />} />
 
         <Route path="/contact" element={<Contact />} />
+
+        <Route path="/doctor-admin/login" element={<Login />} />
       </Routes>
     </div>
   );
