@@ -7,6 +7,7 @@ import Service from "./pages/Service.jsx";
 import ServiceDetails from "./pages/ServiceDetails.jsx";
 import Contact from "./pages/Contact.jsx";
 import Login from "./pages/Login.jsx";
+import DoctorHome from "./pages/DoctorHome.jsx";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
 
         <Route path="/doctor-admin/login" element={<Login />} />
+        <Route path="/doctor-admin/:id" element={<DoctorHome />} />
       </Routes>
     </div>
   );

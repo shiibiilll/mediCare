@@ -70,7 +70,7 @@ const LoginPage = () => {
         navigate(`/doctor-admin/${doctorId}`);
       }, 700);
     } catch (error) {
-      console.error("login error", err);
+      console.error("login error", error);
       toast.error("Network error during login");
     } finally {
       setBusy(false);
