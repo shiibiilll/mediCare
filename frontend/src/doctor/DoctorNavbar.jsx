@@ -115,9 +115,22 @@ const DoctorNavbar = () => {
               <span>{name}</span>
             </NavLink>
           ))}
+          <button
+            onClick={() => {
+              setOpen(false);
+              window.location.href = "/doctor-admin/login";
+            }}
+            className={navbarStylesDr.mobileLogoutButton}
+          >
+            <div className={navbarStylesDr.mobileLogoutContent}>
+              <LogOut size={16} />
+              Logout
+            </div>
+          </button>
         </div>
-        <div></div>
       </div>
+
+      <div className={navbarStylesDr.spacer}></div>
     </>
   );
 };
