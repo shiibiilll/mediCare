@@ -8,6 +8,7 @@ import ServiceDetails from "./pages/ServiceDetails.jsx";
 import Contact from "./pages/Contact.jsx";
 import Login from "./pages/Login.jsx";
 import DoctorHome from "./pages/DoctorHome.jsx";
+import List from "./doctor/List.jsx";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
 
         <Route path="/doctor-admin/login" element={<Login />} />
         <Route path="/doctor-admin/:id" element={<DoctorHome />} />
+        <Route path="/doctor-admin/:id/appointments" element={<List />} />
       </Routes>
     </div>
   );
