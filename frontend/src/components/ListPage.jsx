@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { listPageStyles } from "../assets/styles/styles.js";
 import { useParams } from "react-router-dom";
-import { Search, X } from "lucide-react";
+import { Calendar, Search, X } from "lucide-react";
 
 const API_BASE = "http://localhost:3001";
 
@@ -540,7 +540,59 @@ const ListPage = () => {
                       </div>
                     )}
                   </div>
+
+                  <div className={listPageStyles.cardContent}>
+                    <div className={listPageStyles.cardPatientName}>
+                      {appointment.patient}
+                    </div>
+                    <div className={listPageStyles.cardPatientInfo}>
+                      {appointment.age} years &middot; {appointment.gender}
+                    </div>
+                    <div className={listPageStyles.cardDoctorInfo}>
+                      <span className={listPageStyles.cardDoctorName}>
+                        {appointment.doctorName}
+                      </span>
+                    </div>
+                    <div className={listPageStyles.cardSpeciality}>
+                      {appointment.speciality}
+                    </div>
+                  </div>
                 </header>
+
+                <div className={listPageStyles.dateTimeSection}>
+                  <div className={listPageStyles.dateTimeContainer}>
+                    <Calendar className={listPageStyles.calendarIcon} />
+                    <span className={listPageStyles.dateText}>
+                      {formatDate(appointment.date)}
+                    </span>
+                    <span className=" sm:inline">:</span>
+                    <span>{formatTimeAMPM(appointment.time)}</span>
+                  </div>
+                  <div className={listPageStyles.feeText}>
+                    ₹{appointment.fee}
+                  </div>
+                </div>
+
+                <div className={listPageStyles.contactStatusSection}>
+                  <div className={listPageStyles.phoneContainer}>
+                    <Phone className={listPageStyles.phoneIcon} />
+                    <span className={listPageStyles.phoneNumber}>
+                      {appointment.mobile}
+                    </span>
+                  </div>
+
+                  <div className={listPageStyles.statusContainer}>
+                    <StatusBadge status={appointment.status} />
+                    <StatusSelect
+                      appointment={appointment}
+                      onChange={(s) => updateStatus(appointment.id, s)}
+                    />
+                  </div>
+                </div>
+
+                <div className={listPageStyles.rescheduleContainer}>
+                  <RescheduleButton appointment={appointment} onReschedule={(d, t) => updateDateTime(appointment.id, d, t)} />
+                </div>
               </article>
             ))}
           </div>
