@@ -3,7 +3,7 @@ import Doctor from "../models/Doctor.js";
 
 const JWT_SECRET = process.env.JWT_SECRET;
 
-export default async function doctorAuth(req, res) {
+export default async function doctorAuth(req, res, next) {
   const authHeader = req.headers.authorization;
 
   //Check token
