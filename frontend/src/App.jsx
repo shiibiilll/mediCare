@@ -10,6 +10,7 @@ import Login from "./pages/Login.jsx";
 import DoctorHome from "./pages/DoctorHome.jsx";
 import List from "./doctor/List.jsx";
 import EditProfile from "./doctor/EditProfile.jsx";
+import Appointments from "./pages/Appointments.jsx";
 
 const App = () => {
   return (
@@ -23,8 +24,10 @@ const App = () => {
         <Route path="/services" element={<Service />} />
         <Route path="/services/:id" element={<ServiceDetails />} />
 
+        <Route path="/appointments" element={<Appointments />} />
         <Route path="/contact" element={<Contact />} />
 
+        {/* DOCTORS */}
         <Route path="/doctor-admin/login" element={<Login />} />
         <Route path="/doctor-admin/:id" element={<DoctorHome />} />
         <Route path="/doctor-admin/:id/appointments" element={<List />} />
