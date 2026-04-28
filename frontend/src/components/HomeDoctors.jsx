@@ -4,7 +4,7 @@ import { ChevronRight, Medal, MousePointer2Off } from "lucide-react";
 import { homeDoctorsStyles as hds, iconSize } from "../assets/styles/styles.js";
 
 const HomeDoctors = ({ previewCount = 8 }) => {
-  const API_BASE = "http://localhost:3001";
+  const API_BASE = "https://wellnessway-backend-h7me.onrender.com";
 
   const [doctors, setDoctors] = useState([]);
   const [loading, setLoading] = useState(true);

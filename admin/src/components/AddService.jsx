@@ -12,7 +12,7 @@ import {
 import { addServiceStyles } from "../assets/dummyStyles.js";
 
 const AddService = ({ serviceId }) => {
-  const API_BASE = "http://localhost:3001";
+  const API_BASE = "https://wellnessway-backend-h7me.onrender.com";
 
   const fileRef = useRef(null);
   const [imagePreview, setImagePreview] = useState(null);

@@ -10,7 +10,7 @@ import {
   Phone,
 } from "lucide-react";
 
-const API_BASE = "http://localhost:3001";
+const API_BASE = "https://wellnessway-backend-h7me.onrender.com";
 
 function parseDateTime(date, time) {
   return new Date(`${date}T${time}:00`);

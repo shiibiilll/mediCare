@@ -85,7 +85,7 @@ function getSortedScheduleDates(scheduleLike) {
 }
 
 const ListPage = () => {
-  const API_BASE = "http://localhost:3001";
+  const API_BASE = "https://wellnessway-backend-h7me.onrender.com";
 
   const [doctors, setDoctors] = useState([]);
   const [expanded, setExpanded] = useState(null);

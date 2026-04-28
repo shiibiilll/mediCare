@@ -6,7 +6,7 @@ import logo from "../assets/logo.png";
 import { ArrowLeft } from "lucide-react";
 
 const STORAGE_KEY = "doctorToken_v1";
-const API_BASE = "http://localhost:3001";
+const API_BASE = "https://wellnessway-backend-h7me.onrender.com";
 
 const LoginPage = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });

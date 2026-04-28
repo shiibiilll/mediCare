@@ -251,7 +251,7 @@ const AddPage = () => {
 
       if (form.imageFile) fd.append("image", form.imageFile);
 
-      const API_BASE = "http://localhost:3001/api";
+      const API_BASE = "https://wellnessway-backend-h7me.onrender.com/api";
 
       const res = await fetch(`${API_BASE}/doctors`, {
         method: "POST",

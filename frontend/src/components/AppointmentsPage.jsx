@@ -18,7 +18,7 @@ import {
   XCircle,
 } from "lucide-react";
 
-const API_BASE = "http://localhost:3001";
+const API_BASE = "https://wellnessway-backend-h7me.onrender.com";
 const API = axios.create({ baseURL: API_BASE });
 
 // Helper Functions

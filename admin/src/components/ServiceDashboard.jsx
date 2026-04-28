@@ -54,7 +54,7 @@ function normalizeService(doc) {
   };
 }
 
-const API_BASE = "http://localhost:3001";
+const API_BASE = "https://wellnessway-backend-h7me.onrender.com";
 
 const ServiceDashboard = ({ services: servicesProp = null }) => {
   const [services, setServices] = useState(

@@ -9,7 +9,7 @@ import {
   Users,
 } from "lucide-react";
 
-const API_BASE = "http://localhost:3001";
+const API_BASE = "https://wellnessway-backend-h7me.onrender.com";
 const PATIENT_COUNT_API = `${API_BASE}/api/appointments/patients/count`;
 
 // Helper Functions

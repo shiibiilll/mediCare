@@ -3,7 +3,7 @@ import { listPageStyles } from "../assets/styles/styles.js";
 import { useParams } from "react-router-dom";
 import { Calendar, Phone, Search, X } from "lucide-react";
 
-const API_BASE = "http://localhost:3001";
+const API_BASE = "https://wellnessway-backend-h7me.onrender.com";
 
 // Helper functions
 function parseDateTime(date, time) {

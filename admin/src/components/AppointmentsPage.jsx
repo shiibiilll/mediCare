@@ -6,7 +6,7 @@ import {
   statusClasses,
 } from "../assets/dummyStyles.js";
 
-const API_BASE = "http://localhost:3001";
+const API_BASE = "https://wellnessway-backend-h7me.onrender.com";
 
 // Helper Functions
 // Returns Date As DD-MM-YYYY Format
