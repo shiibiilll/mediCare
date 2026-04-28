@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { Calendar, Search } from "lucide-react";
+import { Calendar, Search, BadgeIndianRupee } from "lucide-react";
 import {
   pageStyles,
   keyframesStyles,
@@ -19,7 +19,7 @@ function formatDateISO(iso) {
       year: "numeric",
     });
   } catch (e) {
-    console.error('Error in helper function', e)
+    console.error("Error in helper function", e);
     return iso;
   }
 }
@@ -37,7 +37,7 @@ function dateTimeFromSlot(slot) {
     base.setHours(hh, mm, 0, 0);
     return base;
   } catch (e) {
-    console.error('Error in helper function', e)
+    console.error("Error in helper function", e);
     return new Date(slot.date + "T00:00:00");
   }
 }
@@ -289,7 +289,7 @@ const AppointmentsPage = () => {
                   onClick={() => {
                     setQuery("");
                     setFilterDate("");
-                    setFilterSpeciality(null);
+                    setFilterSpeciality("all");
                     setShowAll(false);
                     setError(null);
                   }}

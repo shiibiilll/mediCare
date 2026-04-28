@@ -34,7 +34,7 @@ const DoctorNavbar = () => {
           </div>
 
           <div className={navbarStylesDr.brandTextContainer}>
-            <div className={navbarStylesDr.brandTitle}>MediCare</div>
+            <div className={navbarStylesDr.brandTitle}>WellnessWay</div>
             <div className={navbarStylesDr.brandSubtitle}>
               Healthcare Solutions
             </div>

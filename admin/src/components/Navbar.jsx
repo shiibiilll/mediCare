@@ -178,7 +178,7 @@ const Navbar = () => {
           <div className={ns.logoContainer}>
             <img src={logoImg} alt="logo" className={ns.logoImage} />
             <Link to="/">
-              <div className={ns.logoLink}>MediCare</div>
+              <div className={ns.logoLink}>WellnessWay</div>
               <div className={ns.logoSubtext}>Health Solutions</div>
             </Link>
           </div>

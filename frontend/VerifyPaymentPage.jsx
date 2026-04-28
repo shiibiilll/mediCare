@@ -23,7 +23,7 @@ const VerifyPaymentPage = () => {
 
       if (!sessionId) {
         if (!cancelled)
-          navigate("/appointments/payment_status=Failed", { replace: true });
+          navigate("/appointments?payment_status=Failed", { replace: true });
         return;
       }
 

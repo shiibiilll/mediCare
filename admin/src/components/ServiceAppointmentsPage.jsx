@@ -1,5 +1,16 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { Loader2, Search, SearchIcon, XIcon } from "lucide-react";
+import {
+  Loader2,
+  Search,
+  SearchIcon,
+  XIcon,
+  User,
+  Phone,
+  BadgeIndianRupee,
+  Calendar,
+  Clock,
+  CheckCircle,
+} from "lucide-react";
 import { serviceAppointmentsStyles as sas } from "../assets/dummyStyles.js";
 
 const API_BASE = "http://localhost:3001";

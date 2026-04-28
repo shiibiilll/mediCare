@@ -103,17 +103,17 @@ export async function getAppointments(req, res) {
 //Get appointments by patient
 export async function getAppointmentsByPatient(req, res) {
   try {
-    const queryCreatedBy = req.qurey.createdBy || null;
+    const queryCreatedBy = req.query.createdBy || null;
     const clerkUserId = req.auth?.userId || null;
     const resolvedCreatedBy = queryCreatedBy || clerkUserId || null;
 
     console.log(
-      "resolveCreatedBy (query or req.auth.userId):",
+      "resolvedCreatedBy (query or req.auth.userId):",
       resolvedCreatedBy,
     );
 
     if (!resolvedCreatedBy && !req.query.mobile) {
-      return req.status(401).json({
+      return res.status(401).json({
         success: false,
         message: "Authentication required",
       });
@@ -627,7 +627,7 @@ export async function getAppointmentsByDoctor(req, res) {
       .sort({ date: 1, time: 1 })
       .skip(skip)
       .limit(limit)
-      .populate("DoctorId", "name specialization owner imageUrl image")
+      .populate("doctorId", "name specialization owner imageUrl image")
       .lean();
 
     const total = await Appointment.countDocuments(filter);

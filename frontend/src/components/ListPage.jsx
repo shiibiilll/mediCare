@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { listPageStyles } from "../assets/styles/styles.js";
 import { useParams } from "react-router-dom";
-import { Calendar, Search, X } from "lucide-react";
+import { Calendar, Phone, Search, X } from "lucide-react";
 
 const API_BASE = "http://localhost:3001";
 
@@ -591,7 +591,12 @@ const ListPage = () => {
                 </div>
 
                 <div className={listPageStyles.rescheduleContainer}>
-                  <RescheduleButton appointment={appointment} onReschedule={(d, t) => updateDateTime(appointment.id, d, t)} />
+                  <RescheduleButton
+                    appointment={appointment}
+                    onReschedule={(d, t) =>
+                      updateDateTime(appointment.id, d, t)
+                    }
+                  />
                 </div>
               </article>
             ))}

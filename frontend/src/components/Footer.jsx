@@ -91,7 +91,7 @@ const Footer = () => {
                 </div>
               </div>
               <div>
-                <h2 className={footerStyles.companyName}>MediCare</h2>
+                <h2 className={footerStyles.companyName}>WellnessWay</h2>
                 <p className={footerStyles.companyTagline}>
                   Healthcare Solutions
                 </p>
@@ -117,7 +117,7 @@ const Footer = () => {
                   <Mail className={footerStyles.contactIcon} />
                 </div>
                 <span className={footerStyles.contactText}>
-                  MediCareSolutions.com
+                  wellnesswaysolutions.com
                 </span>
               </div>
 
@@ -221,7 +221,7 @@ const Footer = () => {
 
         <div className={footerStyles.bottomSection}>
           <div className={footerStyles.copyright}>
-            <span>&copy;{currentYear} MediCare Healthcare</span>
+            <span>&copy;{currentYear} WellnessWay Healthcare</span>
           </div>
 
           <div className={footerStyles.designerText}>
