@@ -182,8 +182,8 @@ export async function updateService(req, res) {
     if (b.shortDescription !== undefined)
       updateData.shortDescription = b.shortDescription;
     if (b.price !== undefined) updateData.price = sanitizePrice(b.price);
-    if (b.available !== undefined)
-      updateData.available = parseAvailability(b.available);
+    if (b.availability !== undefined)
+      updateData.available = parseAvailability(b.availability);
     if (b.instructions !== undefined)
       updateData.instructions = parseJsonArrayField(b.instructions);
     if (b.slots !== undefined)

@@ -548,9 +548,9 @@ export async function updateServiceAppointment(req, res) {
       }
     }
 
-    const updated = await ServiceAppointment.findById(
+    const updated = await ServiceAppointment.findByIdAndUpdate(
       id,
-      { set: updates },
+      { $set: updates },
       {
         new: true,
         runValidators: true,
