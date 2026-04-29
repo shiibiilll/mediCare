@@ -12,7 +12,7 @@ import { useAuth } from "@clerk/clerk-react";
 import toast, { Toaster } from "react-hot-toast";
 import { serviceDetailStyles, iconSize } from "../assets/styles/styles.js";
 
-const DEFAULT_HOST = "http://localhost:3001".replace(/\/$/, "");
+const DEFAULT_HOST = "https://wellnessway-backend-h7me.onrender.com".replace(/\/$/, "");
 
 function ServiceDetails() {
   const { id } = useParams();

@@ -22,7 +22,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useAuth, useUser } from "@clerk/clerk-react";
 import { doctorDetailStyles } from "../assets/styles/styles.js";
 
-const API_BASE = "http://localhost:3001";
+const API_BASE = "https://wellnessway-backend-h7me.onrender.com"
 
 // Helper functions
 // Parse date into object
