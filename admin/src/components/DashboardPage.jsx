@@ -272,8 +272,8 @@ const DashboardPage = () => {
 
         <StatCard
           icon={<CheckCircle className="w-6 h-6" />}
-          label="Completed"
-          value={totals.completed}
+          label="Canceled"
+          value={totals.canceled}
         />
       </div>
 
