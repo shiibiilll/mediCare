@@ -21,7 +21,7 @@ export default async function doctorAuth(req, res, next) {
     const payload = jwt.verify(token, JWT_SECRET);
     if (payload.role && payload.role !== "doctor") {
       res.status(403).json({
-        success: true,
+        success: false,
         message: "Access Denied",
       });
     }
